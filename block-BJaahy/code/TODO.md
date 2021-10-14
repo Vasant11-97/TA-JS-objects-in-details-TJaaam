@@ -14,6 +14,37 @@
 
 - Create another property named `numberOfTimes` that will hold the value of number of times the area property is accessed from the object. The values will initialize to `0`. The area property can't be accessed more than 4 times. If it crosses 4 times alert message `Upper Limit Reached`
 
+```js
+
+class Square {
+    constructor(side){
+        this.side = side;
+    }
+    description(){
+        alert(`The ${side} is ${width * height}`)
+    }
+    calArea(){
+        return this.width * this.height;
+    }
+    get area(){
+        return this.width * this.height;
+    }
+    set area(){
+        let side = Math.sqrt(value);
+        this.width = side;
+        this.heigth = side;
+    }
+    static isEqual(a,b){
+        if(a.width * a.height)===(b.width * b.height){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+```
+
 - Create two instance of the `Square` class
 
 - Check the `area` getter method on both square. Check the `area` property on one square more than 4 times.
@@ -27,6 +58,37 @@
 - Create a getter method named `fullName` that will return the full name of the person.
 
 - Create a `fullName` setter method that will accept full name parameter of the person. It will update the `firstName` and `lastName` based on the input. Say if the user passed `Arya Stark` it will update the `firstName` to `Arya` and `lastName` to `Stark`. It will also change one condition if the length of the name passed is less than 5 characters it will alert a message saying `Full name should be more than 5 characters`
+
+```js 
+
+class User {
+    constructor (firstName , lastName){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    }
+    get fullName (){
+        return `${this.firstName} ${this.lastName}`
+    }
+    set fullName(firstName){
+        if (name.length < 5) {
+        alert(`full name should be more than 5 characters`);
+        } else {
+        firstName = name.split(" ")[0];
+        lastName = name.split(" ")[1];
+        this.firstName = firstName;
+        this.lastName = lastName;
+        }
+        namecontains(str){
+        return `${this.firstName} ${this.lastName}`.includes(str);
+        }
+    }
+}
+
+let user1 = new User("Aman")
+
+```
+
+
 
 - Create a method named `nameContains` which will accept string and will return `true` or `false` based on if the name of the user contains the text that passed by user.
 
