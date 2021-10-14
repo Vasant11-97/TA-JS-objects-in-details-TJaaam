@@ -18,28 +18,31 @@
 
 class Square {
     constructor(side){
-        this.side = side;
+        this.width = side;
+        this.height = side;
+        this.numberOfTimes = 0;
     }
     description(){
-        alert(`The ${side} is ${width * height}`)
+        alert(`The ${side} is ${this.width} x ${this.height}`)
     }
     calArea(){
         return this.width * this.height;
     }
     get area(){
-        return this.width * this.height;
+        this.numberOfTimes++;
+        if(this.numberOfTimes >= 4){
+            alert(`You have reached the upper limit!`);
+        } else{
+            return this.width * this.height;
+        }
     }
-    set area(){
+    set area(value){
         let side = Math.sqrt(value);
         this.width = side;
         this.heigth = side;
     }
-    static isEqual(a,b){
-        if(a.width * a.height)===(b.width * b.height){
-            return true;
-        } else {
-            return false;
-        }
+    static isEqual(a, b){
+        return (a.width * a.height) === (b.width * b.height);
     }
 }
 
@@ -69,22 +72,22 @@ class User {
     get fullName (){
         return `${this.firstName} ${this.lastName}`
     }
-    set fullName(firstName){
-        if (name.length < 5) {
-        alert(`full name should be more than 5 characters`);
+    set fullName(name){
+        if(name.length < 5){
+            alert(`Full Name should be more than 5 letters`);
         } else {
-        firstName = name.split(" ")[0];
-        lastName = name.split(" ")[1];
-        this.firstName = firstName;
-        this.lastName = lastName;
+            let firstName = name.split(' ')[0];
+            let lastName = name.split(' ')[1];
+            this.firstName = firstName;
+            this.lastName = lastName;
         }
-        namecontains(str){
-        return `${this.firstName} ${this.lastName}`.includes(str);
-        }
+    }
+    nameContains(str){
+        return `${this.firstName} ${this.lastName}`.includes(str); 
     }
 }
 
-let user1 = new User("Aman")
+let user1 = new User("Vasant", "Saraswat");
 
 ```
 
