@@ -27,6 +27,41 @@ Getter
 
 - `length`: returns the current length of the stack.
 
+```js
+
+class Stack{
+    constructor(){
+        this.stack = [];
+    }
+    push(value){
+        this.stack.push(value);
+        return this.stack;
+    }
+    pop(value){
+        this.stack.pop(value);
+        return this.stack;
+    }
+    peek(value){
+
+    }
+    reverse(){
+        this.stack.reverse();
+        return this.reverse;
+    }
+    isEmpty(){
+        !(this.stack.length > 0)
+    }
+    displayStack(){
+        this.stack.join("");
+        return this.stack;
+    }
+    get length(){
+        this.stack.length;
+    }
+}
+
+```
+
 #### Test
 
 ```js
@@ -64,11 +99,42 @@ Getter
 
 - `length`: returns the current length of the stack.
 
+```js
+
+class Queue{
+    constructor(){
+        this.queue = [];
+    }
+    enqueue(value){
+        this.queue.push(value);
+        return this.queue;
+    }
+    dequeue(value){
+        this.queue.pop(value);
+        return this.queue;
+    }
+    peek(index = this.queue.length - 1){
+        return this.queue[index];
+    }
+    isEmpty(){
+        return !(this.queue.length> 0);
+    }
+    displayQueue(value){
+        this.queue.join(value);
+        return this.queue;
+    }
+    get length(){
+        return this.queue.length;
+    }
+}
+
+```
+
 #### Test
 
 ```js
 let atmQueue = new Queue();
-atmQueue.enqueue('Aman');
+atmQueue.enqueue('Vasant');
 atmQueue.enqueue('John');
 atmQueue.enqueue('Rohan');
 console.log(atmQueue.displayQueue()); // "Aman John Rohan"
